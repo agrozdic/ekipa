@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Projekat.Models;
+using Projekat.resources;
+using Projekat.resources.services;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +28,13 @@ namespace Projekat
         public MainWindow()
         {
             InitializeComponent();
+            /*
+            JezikService jezikService = new JezikService();
+            jezikService.InitializeService();
+            ObservableCollection<Jezik> listaJezik = jezikService.getJezici();
+            */
+
+          
         }
     }
 }

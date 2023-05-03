@@ -29,7 +29,7 @@ namespace Projekat.resources.repos
                 {
                     Jezik jezik = jezikService.getJezikByID(reader.GetInt32(6));
                     Osoba osoba = new Osoba(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), jezik);
-                    osoba.Obrisano = reader.GetBoolean(2);
+                    osoba.Obrisano = reader.GetBoolean(7);
 
                     OsobaManager.GetInstance().SveOsobe.Add(osoba);
                 }
@@ -47,7 +47,7 @@ namespace Projekat.resources.repos
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("INSERT INTO Osoba VALUES(@osobaID, @ime, @prezime, @email, @adresa, @brKartice, @osnovniJezik)", conn))
+                    new SqlCommand("INSERT INTO Osoba VALUES(@osobaID, @ime, @prezime, @email, @adresa, @brKartice, @osnovniJezik, @obrisano)", conn))
                 {
                     cmd.Parameters.AddWithValue("@osobaID", osobaID);
                     cmd.Parameters.AddWithValue("@ime", ime);
@@ -56,6 +56,7 @@ namespace Projekat.resources.repos
                     cmd.Parameters.AddWithValue("@adresa", adresa);
                     cmd.Parameters.AddWithValue("@brKartice", brKartice);
                     cmd.Parameters.AddWithValue("@osnovniJezik", osnovniJezik.JezikID);
+                    cmd.Parameters.AddWithValue("@obrisano", false);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }

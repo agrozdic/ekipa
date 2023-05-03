@@ -26,6 +26,7 @@ namespace Projekat.resources.repos
                 {
                     Jezik jezik = new Jezik(reader.GetInt32(0), reader.GetString(1));
                     jezik.Obrisano = reader.GetBoolean(2);
+                    //throw new Exception("Ja");
 
                     JezikManager.GetInstance().SviJezici.Add(jezik);
                 }
@@ -43,10 +44,11 @@ namespace Projekat.resources.repos
             {
                 conn.Open();
                 using (SqlCommand cmd =
-                    new SqlCommand("INSERT INTO Jezik VALUES(@jezikID, @naziv)", conn))
+                    new SqlCommand("INSERT INTO Jezik VALUES(@jezikID, @naziv, @obrisano)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id", jezikID);
+                    cmd.Parameters.AddWithValue("@jezikID", jezikID);
                     cmd.Parameters.AddWithValue("@naziv", naziv);
+                    cmd.Parameters.AddWithValue("@obrisano", false);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                 }

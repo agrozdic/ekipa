@@ -13,7 +13,7 @@ namespace Projekat.Models
         private string naziv;
         private bool obrisano;
 
-        public int JezikID { get => JezikID; set => JezikID = value; }
+        public int JezikID { get => jezikID; set => jezikID = value; }
         public string Naziv { get => naziv; set => naziv = value; }
         public bool Obrisano { get => obrisano; set => obrisano = value; }
 

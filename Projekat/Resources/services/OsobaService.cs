@@ -33,7 +33,7 @@ namespace Projekat.resources.services
         {
             try
             {
-                ObservableCollection<Osoba> osobe = new ObservableCollection<Osoba>(OsobaManager.GetInstance().SviOsobe.Where(osoba => !(osoba.Obrisano)).ToList());
+                ObservableCollection<Osoba> osobe = new ObservableCollection<Osoba>(OsobaManager.GetInstance().SveOsobe.Where(osoba => !(osoba.Obrisano)).ToList());
                 return osobe;
             }
             catch (Exception exception)
