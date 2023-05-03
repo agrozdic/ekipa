@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace Projekat.Models
 		private string adresa;
 		private string brKartice;
 		private Jezik osnovniJezik;
-		private List<Jezik> listaDodatnihJezika;
+		private ObservableCollection<Jezik> listaDodatnihJezika;
+		private bool obrisano;
 
 		public int OsobaID { get => osobaID; set => osobaID = value; }
 		public string Ime { get => ime; set => ime = value; }
@@ -24,9 +26,10 @@ namespace Projekat.Models
 		public string Adresa { get => adresa; set => adresa = value; }
 		public string BrKartice { get => brKartice; set => brKartice = value; }
 		public Jezik OsnovniJezik { get => osnovniJezik; set => osnovniJezik = value; }
-        internal List<Jezik> ListaDodatnihJezika { get => listaDodatnihJezika; set => listaDodatnihJezika = value; }
+        internal ObservableCollection<Jezik> ListaDodatnihJezika { get => listaDodatnihJezika; set => listaDodatnihJezika = value; }
+		public bool Obrisano { get => obrisano; set => obrisano = value; }
 
-        public Osoba(int osobaID, string ime, string prezime, string email, string adresa, string brKartice, Jezik osnovniJezik, List<Jezik> listaDodatnihJezika)
+		public Osoba(int osobaID, string ime, string prezime, string email, string adresa, string brKartice, Jezik osnovniJezik)
         {
             this.osobaID = osobaID;
             this.ime = ime;
@@ -35,7 +38,7 @@ namespace Projekat.Models
             this.adresa = adresa;
             this.brKartice = brKartice;
             this.osnovniJezik = osnovniJezik;
-            this.listaDodatnihJezika = listaDodatnihJezika;
-        }
+			this.Obrisano = false;
+		}
     }
 }

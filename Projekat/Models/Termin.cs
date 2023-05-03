@@ -13,11 +13,13 @@ namespace Projekat.Models
 		private Trener trener;
 		private DateTime datumVreme;
 		private bool slobodan;
+        private bool obrisano;
 
         public int TerminID { get => terminID; set => terminID = value; }
         public DateTime DatumVreme { get => datumVreme; set => datumVreme = value; }
         public bool Slobodan { get => slobodan; set => slobodan = value; }
         internal Trener Trener { get => trener; set => trener = value; }
+        public bool Obrisano { get => obrisano; set => obrisano = value; }
 
         public Termin(int terminID, Trener trener, DateTime datumVreme, bool slobodan)
         {
@@ -25,6 +27,7 @@ namespace Projekat.Models
             this.Trener = trener;
             this.DatumVreme = datumVreme;
             this.Slobodan = slobodan;
+            this.Obrisano = false;
         }
     }
 }

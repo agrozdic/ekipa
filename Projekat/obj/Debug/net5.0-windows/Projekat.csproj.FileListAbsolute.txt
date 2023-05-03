@@ -1,0 +1,5 @@
+D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.csprojAssemblyReference.cache
+D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\MainWindow.g.cs
+D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\App.g.cs
+D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat_MarkupCompile.cache
+D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat_MarkupCompile.lref

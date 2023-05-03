@@ -12,16 +12,19 @@ namespace Projekat.Models
         private int rekvizitID;
         private string naziv;
         private string opis;
+        private bool obrisano;
 
         public int RekvizitID { get => rekvizitID; set => rekvizitID = value; }
         public string Naziv { get => naziv; set => naziv = value; }
         public string Opis { get => opis; set => opis = value; }
+        public bool Obrisano { get => obrisano; set => obrisano = value; }
 
         public Rekvizit(int rekvizitID, string naziv, string opis)
         {
             this.RekvizitID = rekvizitID;
             this.Naziv = naziv;
             this.Opis = opis;
+            this.Obrisano = false;
         }
     }
 }

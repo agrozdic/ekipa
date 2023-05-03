@@ -16,6 +16,7 @@ namespace Projekat.Models
 		private string zdrStanje;
         private List<Rekvizit> listaRekvizita;
         private List<Cilj> listaCiljeva;
+        private bool obrisano;
 
         public int KlijentID { get => klijentID; set => klijentID = value; }
         public float Visina { get => visina; set => visina = value; }
@@ -24,6 +25,7 @@ namespace Projekat.Models
         internal Osoba Osoba { get => osoba; set => osoba = value; }
         internal List<Rekvizit> ListaRekvizita { get => listaRekvizita; set => listaRekvizita = value; }
         internal List<Cilj> ListaCiljeva { get => listaCiljeva; set => listaCiljeva = value; }
+        public bool Obrisano { get => obrisano; set => obrisano = value; }
 
         public Klijent(int klijentID, Osoba osoba, float visina, float tezina, string zdrStanje, List<Rekvizit> listaRekvizita, List<Cilj> listaCiljeva)
         {
@@ -34,6 +36,7 @@ namespace Projekat.Models
             this.ZdrStanje = zdrStanje;
             this.ListaRekvizita = listaRekvizita;
             this.ListaCiljeva = listaCiljeva;
+            this.Obrisano = false;
         }
 
     }

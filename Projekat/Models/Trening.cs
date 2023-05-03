@@ -16,6 +16,7 @@ namespace Projekat.Models
 		private string plan;
 		private int ocenaKlijenta;
 		private int ocenaTrenera;
+        private bool obrisano;
 
         public int TreningID { get => treningID; set => treningID = value; }
         public string Plan { get => plan; set => plan = value; }
@@ -24,6 +25,7 @@ namespace Projekat.Models
         internal Klijent Klijent { get => klijent; set => klijent = value; }
         internal Trener Trener { get => trener; set => trener = value; }
         internal Termin Termin { get => termin; set => termin = value; }
+        public bool Obrisano { get => obrisano; set => obrisano = value; }
 
         public Trening(int treningID, Klijent klijent, Trener trener, Termin termin, string plan, int ocenaKlijenta, int ocenaTrenera)
         {
@@ -34,6 +36,7 @@ namespace Projekat.Models
             this.Plan = plan;
             this.OcenaKlijenta = ocenaKlijenta;
             this.OcenaTrenera = ocenaTrenera;
+            this.Obrisano = false;
         }
     }
 }

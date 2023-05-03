@@ -1,0 +1,21 @@
+﻿BEGIN TRANSACTION;
+
+ALTER TABLE Cilj ADD Obrisano BIT;
+
+ALTER TABLE Jezik ADD Obrisano BIT;
+
+ALTER TABLE Klijent ADD Obrisano BIT;
+
+ALTER TABLE Korisnik ADD Obrisano BIT;
+
+ALTER TABLE Osoba ADD Obrisano BIT;
+
+ALTER TABLE Rekvizit ADD Obrisano BIT;
+
+ALTER TABLE Termin ADD Obrisano BIT;
+
+ALTER TABLE Trener ADD Obrisano BIT;
+
+ALTER TABLE Trening ADD Obrisano BIT;
+
+COMMIT TRANSACTION;
