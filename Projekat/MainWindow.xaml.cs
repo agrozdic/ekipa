@@ -28,11 +28,11 @@ namespace Projekat
         public MainWindow()
         {
             InitializeComponent();
-            /*
-            JezikService jezikService = new JezikService();
-            jezikService.InitializeService();
-            ObservableCollection<Jezik> listaJezik = jezikService.getJezici();
-            */
+            TerminService terminService = new TerminService();
+            terminService.InitializeService();
+            ObservableCollection<Termin> listaCiljeva = terminService.getTermini();
+
+            dg.ItemsSource = listaCiljeva;
 
           
         }

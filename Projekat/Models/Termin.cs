@@ -11,21 +11,24 @@ namespace Projekat.Models
 
 		private int terminID;
 		private Trener trener;
-		private DateTime datumVreme;
+		private DateTime datum;
+        private TimeSpan vreme;
 		private bool slobodan;
         private bool obrisano;
 
         public int TerminID { get => terminID; set => terminID = value; }
-        public DateTime DatumVreme { get => datumVreme; set => datumVreme = value; }
+        public DateTime Datum { get => datum; set => datum = value; }
+        public TimeSpan Vreme { get => vreme; set => vreme = value; }
         public bool Slobodan { get => slobodan; set => slobodan = value; }
         internal Trener Trener { get => trener; set => trener = value; }
         public bool Obrisano { get => obrisano; set => obrisano = value; }
 
-        public Termin(int terminID, Trener trener, DateTime datumVreme, bool slobodan)
+        public Termin(int terminID, Trener trener, DateTime datum, TimeSpan vreme, bool slobodan)
         {
             this.TerminID = terminID;
             this.Trener = trener;
-            this.DatumVreme = datumVreme;
+            this.Datum = datum;
+            this.Vreme = vreme;
             this.Slobodan = slobodan;
             this.Obrisano = false;
         }

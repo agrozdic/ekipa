@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="AddressWindow" Height="450" Width="800">
     <Grid Margin="25 25 25 25">
-        <ListBox>
-            <ListBox Name="list1" Height="100" Width="100"/>
-        </ListBox>
+        <DataGrid Name="dg"/>
+
     </Grid>
 </Window>
