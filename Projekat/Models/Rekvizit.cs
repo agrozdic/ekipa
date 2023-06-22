@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace Projekat.Models
 {
-    class Rekvizit
+    public class Rekviziti
     {
+        private string _naziv;
 
-        private int rekvizitID;
-        private string naziv;
-        private string opis;
-        private bool obrisano;
-
-        public int RekvizitID { get => rekvizitID; set => rekvizitID = value; }
-        public string Naziv { get => naziv; set => naziv = value; }
-        public string Opis { get => opis; set => opis = value; }
-        public bool Obrisano { get => obrisano; set => obrisano = value; }
-
-        public Rekvizit(int rekvizitID, string naziv, string opis)
+        public string naziv
         {
-            this.RekvizitID = rekvizitID;
-            this.Naziv = naziv;
-            this.Opis = opis;
-            this.Obrisano = false;
+            get { return _naziv; }
+            set { _naziv = value; }
+        }
+
+        private string _primena;
+
+        public string Primena
+        {
+            get { return _primena; }
+            set { _primena = value; }
         }
     }
 }

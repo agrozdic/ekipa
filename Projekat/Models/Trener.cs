@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,31 +6,25 @@ using System.Threading.Tasks;
 
 namespace Projekat.Models
 {
-    class Trener
+    [Serializable]
+    public class Trener
     {
+        private Korisnik korisnik;
 
-		private int trenerID;
-		private Osoba osoba;
-		private string diploma;
-		private string sertifikat;
-		private string zvanje;
-        private bool obrisano;
-
-        public int TrenerID { get => trenerID; set => trenerID = value; }
-        public string Diploma { get => diploma; set => diploma = value; }
-        public string Sertifikat { get => sertifikat; set => sertifikat = value; }
-        public string Zvanje { get => zvanje; set => zvanje = value; }
-        internal Osoba Osoba { get => osoba; set => osoba = value; }
-        public bool Obrisano { get => obrisano; set => obrisano = value; }
-
-        public Trener(int trenerID, Osoba osoba, string diploma, string sertifikat, string zvanje)
+        public Korisnik Korisnik
         {
-            this.TrenerID = trenerID;
-            this.Osoba = osoba;
-            this.Diploma = diploma;
-            this.Sertifikat = sertifikat;
-            this.Zvanje = zvanje;
-            this.Obrisano = false;
+            get { return korisnik; }
+            set { korisnik = value; }
+        }
+
+        public override string ToString()
+        {
+            return korisnik.Ime + " " + korisnik.Prezime;
+        }
+
+        public string TrenerZaUpisUFajl()
+        {
+            return korisnik.Ime + ";" + korisnik.Prezime + ";" + korisnik.Email + ";" + korisnik.Telefon + ";" + korisnik.Adresa + ";" + korisnik.BrKartice + ";" + korisnik.OsnovniJezik + ";" + korisnik.DodatniJezik + ";" + korisnik.TipKorisnika + ";" + korisnik.Lozinka + ";" + korisnik.Cilj + ";" + korisnik.Aktivan;
         }
     }
 }

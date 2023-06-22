@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,37 +6,73 @@ using System.Threading.Tasks;
 
 namespace Projekat.Models
 {
-    class Trening
+    [Serializable]
+    public class Trening
     {
+        public Trening() { }
 
-		private int treningID;
-		private Klijent klijent;
-		private Trener trener;
-		private Termin termin;
-		private string plan;
-		private int ocenaKlijenta;
-		private int ocenaTrenera;
-        private bool obrisano;
+        private int _sifra;
 
-        public int TreningID { get => treningID; set => treningID = value; }
-        public string Plan { get => plan; set => plan = value; }
-        public int OcenaKlijenta { get => ocenaKlijenta; set => ocenaKlijenta = value; }
-        public int OcenaTrenera { get => ocenaTrenera; set => ocenaTrenera = value; }
-        internal Klijent Klijent { get => klijent; set => klijent = value; }
-        internal Trener Trener { get => trener; set => trener = value; }
-        internal Termin Termin { get => termin; set => termin = value; }
-        public bool Obrisano { get => obrisano; set => obrisano = value; }
-
-        public Trening(int treningID, Klijent klijent, Trener trener, Termin termin, string plan, int ocenaKlijenta, int ocenaTrenera)
+        public int Sifra
         {
-            this.TreningID = treningID;
-            this.Klijent = klijent;
-            this.Trener = trener;
-            this.Termin = termin;
-            this.Plan = plan;
-            this.OcenaKlijenta = ocenaKlijenta;
-            this.OcenaTrenera = ocenaTrenera;
-            this.Obrisano = false;
+            get { return _sifra; }
+            set { _sifra = value; }
+        }
+
+        private DateTime dateTime;
+
+        public DateTime Datum
+        {
+            get { return dateTime; }
+            set { dateTime = value; }
+        }
+
+        private int _trajanjeTreninga;
+
+        public int TrajanjeTreninga
+        {
+            get { return _trajanjeTreninga; }
+            set { _trajanjeTreninga = value; }
+        }
+
+        private EStatusTreninga _statusTreninga;
+
+        public EStatusTreninga StatusTreninga
+        {
+            get { return _statusTreninga; }
+            set { _statusTreninga = value; }
+        }
+
+        private Trener _trener;
+
+        public Trener Trener
+        {
+            get { return _trener; }
+            set { _trener = value; }
+        }
+
+        private Klijent _klijent;
+
+        public Klijent Klijent
+        {
+            get { return _klijent; }
+            set { _klijent = value; }
+        }
+
+        private bool _aktivan;
+
+        public bool Aktivan
+        {
+            get { return _aktivan; }
+            set { _aktivan = value; }
+        }
+
+        public string TreningZaUpisUFajl()
+        {
+            if(Klijent == null)
+                return Sifra + ";" + Datum + ";" + TrajanjeTreninga + ";" + StatusTreninga + ";" + Trener.Korisnik.Email + ";" + "NijeZakazan" + ";" + Aktivan;
+            else
+                return Sifra + ";" + Datum + ";" + TrajanjeTreninga + ";" + StatusTreninga + ";" + Trener.Korisnik.Email + ";" + Klijent.Korisnik.Email + ";" + Aktivan;
         }
     }
 }

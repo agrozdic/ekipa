@@ -4,40 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projekat.Models
+namespace Projekat.Models 
 {
-    class Klijent
+    [Serializable]
+    public class Klijent
     {
+        private RegistrovaniKorisnik korisnik;
 
-		private int klijentID;
-		private Osoba osoba;
-		private float visina;
-		private float tezina;
-		private string zdrStanje;
-        private List<Rekvizit> listaRekvizita;
-        private List<Cilj> listaCiljeva;
-        private bool obrisano;
-
-        public int KlijentID { get => klijentID; set => klijentID = value; }
-        public float Visina { get => visina; set => visina = value; }
-        public float Tezina { get => tezina; set => tezina = value; }
-        public string ZdrStanje { get => zdrStanje; set => zdrStanje = value; }
-        internal Osoba Osoba { get => osoba; set => osoba = value; }
-        internal List<Rekvizit> ListaRekvizita { get => listaRekvizita; set => listaRekvizita = value; }
-        internal List<Cilj> ListaCiljeva { get => listaCiljeva; set => listaCiljeva = value; }
-        public bool Obrisano { get => obrisano; set => obrisano = value; }
-
-        public Klijent(int klijentID, Osoba osoba, float visina, float tezina, string zdrStanje, List<Rekvizit> listaRekvizita, List<Cilj> listaCiljeva)
+        public RegistrovaniKorisnik Korisnik
         {
-            this.KlijentID = klijentID;
-            this.Osoba = osoba;
-            this.Visina = visina;
-            this.Tezina = tezina;
-            this.ZdrStanje = zdrStanje;
-            this.ListaRekvizita = listaRekvizita;
-            this.ListaCiljeva = listaCiljeva;
-            this.Obrisano = false;
+            get { return korisnik; }
+            set { korisnik = value; }
         }
 
+        public override string ToString()
+        {
+            return korisnik.Ime + " " + korisnik.Prezime;
+        }
+
+        public string KlijentZaUpisUFajl()
+        {
+            return korisnik.Ime + ";" + korisnik.Prezime + ";" + korisnik.Email + ";" + korisnik.Telefon + ";" + korisnik.Adresa + ";" + korisnik.BrKartice + ";" + korisnik.OsnovniJezik + ";" + korisnik.DodatniJezik + ";" + korisnik.TipKorisnika + ";" + korisnik.Lozinka + ";" + korisnik.CiljKlijenta + ";" + korisnik.Aktivan;
+        }
+        
     }
 }
