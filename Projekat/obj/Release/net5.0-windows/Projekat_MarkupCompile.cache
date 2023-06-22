@@ -1,18 +1,18 @@
 ﻿Projekat
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\acer\Desktop\Projekat\ekipa\Projekat\obj\Debug\net5.0-windows\
+C:\Users\acer\Desktop\Projekat\ekipa\Projekat\obj\Release\net5.0-windows\
 Projekat
 none
 false
-TRACE;DEBUG;NET;NET5_0;NETCOREAPP
+TRACE;RELEASE;NET;NET5_0;NETCOREAPP
 C:\Users\acer\Desktop\Projekat\ekipa\Projekat\App.xaml
 11407045341
 
-41110516580
+38-992797976
 1942035698853
 MainWindow.xaml;
 
