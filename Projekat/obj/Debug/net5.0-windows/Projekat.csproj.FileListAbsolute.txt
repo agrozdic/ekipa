@@ -26,3 +26,5 @@ D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.dll
 D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\ref\Projekat.dll
 D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.pdb
 D:\Desktop\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.genruntimeconfig.cache
+C:\Users\38161\Desktop\Specifikacije\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.dll
+C:\Users\38161\Desktop\Specifikacije\ekipa\Projekat\obj\Debug\net5.0-windows\Projekat.pdb
