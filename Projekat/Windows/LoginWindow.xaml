@@ -1,0 +1,26 @@
+﻿<Window x:Class="ProjekatGNS.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid>
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
+        <Label Content="Unesite podatke za prijavu: " HorizontalAlignment="Left" Margin="266,13,0,0" VerticalAlignment="Top" Foreground="#ffd60a" FontSize="20"/>
+
+        <Label Content="Email" HorizontalAlignment="Left" Margin="368,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.602" Foreground="#ffd60a" FontSize="17"/>
+        <TextBox HorizontalAlignment="Left" Name="TxtEmail"  Height="22" Margin="292,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+
+        <Label Content="Lozinka" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Width="80" Foreground="#ffd60a" RenderTransformOrigin="1.401,3.515" FontSize="17"/>
+        <PasswordBox HorizontalAlignment="Left" Name="PBPassword" Margin="292,241,0,0" VerticalAlignment="Top" Width="202" Height="22"/>
+
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="266,309,0,0" VerticalAlignment="Top" Width="94" Height="55" Background="#ffd60a" Click="btnLogin_Click"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="426,307,0,0" VerticalAlignment="Top" Width="94" Height="55" Background="#ffd60a" Click="btnOdustani_Click"/>
+        <Label Content="Niste registrovani?" HorizontalAlignment="Left" Margin="621,318,0,0" VerticalAlignment="Top" Width="160" Foreground="#ffd60a" RenderTransformOrigin="1.401,3.515" FontSize="17"/>
+        <Button Content="Registracija" HorizontalAlignment="Left" Margin="621,356,0,0" VerticalAlignment="Top" Width="155" Height="42" Background="#ffd60a" Click="btnRegistracija_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="ProjekatGNS.Windows.DodajIzmeniKlijentaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        mc:Ignorable="d"
+        Title="DodajIzmeniKlijentaWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid>
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
+        <StackPanel Margin="10,10,439,0">
+            <Label Name="lblIme" Content="Ime:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding Ime}" x:Name="txtIme" Width="150"/>
+
+            <Label x:Name="lblPrezime" Content="Prezime:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding Prezime}" x:Name="txtPrezime" Width="150"/>
+
+            <Label x:Name="lblEmail" Content="Email:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox x:Name="txtEmail" FontFamily="Lato" FontWeight="Light" Text="{Binding Email}" FontSize="16" Width="150"/>
+
+            <Label x:Name="lblLozinka" Content="Lozinka:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding Lozinka}" x:Name="txtLozinka"  Width="150"/>
+
+            <Label x:Name="lblTelefon" Content="Broj telefona:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding Telefon}" x:Name="txtTelefon"  Width="150"/>
+
+            <Label x:Name="lblAdresa" Content="Adresa:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding Adresa}" x:Name="txtAdresa"  Width="150"/>
+
+            <Label x:Name="lblKartica" Content="Broj platne kartice:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding BrKartice}" x:Name="txtKartica"  Width="150"/>
+        </StackPanel>
+        <StackPanel Margin="400,0,0,0">
+            <Label x:Name="lblOsnovniJezik" Content="Osnovni jezik:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding OsnovniJezik}" x:Name="txtOsnovniJezik"  Width="150"/>
+
+            <Label x:Name="lblDodatniJezik" Content="Dodatni jezik:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <TextBox FontFamily="Lato" FontWeight="Light" FontSize="16" Text="{Binding DodatniJezik}" x:Name="txtDodatniJezik"  Width="150"/>
+
+            <Label x:Name="lblTipKorisnika" Content="Tip korisnika:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <ComboBox FontFamily="Lato" Name="cmbTipKorisnika" FontWeight="Light" FontSize="16" Text="{Binding Path=TipKorisnika}" Width="150" SelectionChanged="cmbTipKorisnika_SelectionChanged"/>
+
+            <Label x:Name="lblCiljKlijenta" Content="Cilj klijenta:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Foreground="#ffd60a"/>
+            <ComboBox FontFamily="Lato" Name="cmbCiljKlijenta" FontWeight="Light" FontSize="16" Text="{Binding Path=CiljKlijenta}" Width="150"/>
+        </StackPanel>
+        
+        <Button Content="Sacuvaj" HorizontalAlignment="Left" Margin="479,222,0,0" VerticalAlignment="Top" Width="94" Height="54" Background="#ffd60a" Click="btnSacuvaj_Click"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="617,222,0,0" VerticalAlignment="Top" Width="94" Height="55" Background="#ffd60a" Click="btnOdustani_Click"/>
+    </Grid>
+</Window>

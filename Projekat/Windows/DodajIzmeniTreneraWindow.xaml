@@ -1,0 +1,28 @@
+﻿<Window x:Class="ProjekatGNS.Windows.DodajIzmeniTreneraWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        mc:Ignorable="d"
+        Title="DodajIzmeniTreneraWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid>
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
+
+        <Menu Margin="0,0,0,388" Background="#ffd60a">
+            <Image Source="/Images/plus.png" Height="13" Width="19"></Image>
+            <MenuItem Name="miDodajTrenera" Header="Dodaj korisnika" Click="miDodajKorisnika_Click"/>
+            <Image Source="/Images/edit.png" Height="13" Width="19"></Image>
+            <MenuItem Name="miIzmeniTrenera" Header="Izmeni korisnika" Click="miIzmeniKorisnika_Click"/>
+            <Image Source="/Images/delete.png" Height="13" Width="19"></Image>
+            <MenuItem Name="miObrisiTrenera" Header="Obrisi korisnika" Click="miObrisi_Click"/>
+        </Menu>
+        <DataGrid Name="dgTreneri" CanUserAddRows="False" HorizontalAlignment="Center" Height="196" Margin="0,51,0,0" VerticalAlignment="Top" Width="746" AutoGeneratingColumn="dgTreneri_AutoGeneratingColumn" Background="#ffd60a"/>
+
+        <Label x:Name="lblPretraga" Content="Pretraga korisnika:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Foreground="#ffd60a" Margin="310,252,0,95" Width="160" RenderTransformOrigin="0.666,0.834"/>
+        <TextBox Name="txtPretragaIme" Margin="310,291,322,93" KeyUp="txtPretragaIme_KeyUp" RenderTransformOrigin="2.327,0.46" Background="#ffd60a"/>
+
+        <Button x:Name="btnLogout" Content="Odjavi se" Click="btnLogout_Click" FontSize="10" Background="#ffd60a" Margin="27,316,668,50"/>
+    </Grid>
+</Window>

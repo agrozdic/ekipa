@@ -1,0 +1,21 @@
+﻿<Window x:Class="ProjekatGNS.Windows.PrikazUlogovanogKorisnikaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        mc:Ignorable="d"
+        Title="PrikazUlogovanogKorisnikaWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid>
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
+
+        <Label Content="Uspesno ste se ulogovali!" HorizontalAlignment="Left" Margin="266,13,0,0" VerticalAlignment="Top" Foreground="#ffd60a" FontSize="20"/>
+
+        <Button Name="btnStart" Content="-Trener" Margin="278,189,312,157" Background="#ffd60a" Click="btnTrener_Click"/>
+        <Button Name="btnAdmin" Content="-Administrator"  Margin="277,282,312,64" Background="#ffd60a" Click="btnAdmin_Click"/>
+        <Button Name="btnKlijent" Content="-Klijent"  Margin="278,96,312,250" Background="#ffd60a" Click="btnKlijent_Click"/>
+        <Button Name="btnVlasnik" Content="-Vlasnik"  Margin="33,96,557,250" Background="#ffd60a" Click="btnVlasnik_Click"/>
+
+    </Grid>
+</Window>

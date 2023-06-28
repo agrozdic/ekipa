@@ -1,0 +1,15 @@
+﻿<Window x:Class="ProjekatGNS.Windows.VlasnikWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        mc:Ignorable="d"
+        Title="VlasnikWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid>
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
+
+        <Button Name="btnPrikazIzvestaja" Content="Prikaz izvestaja i lista korisnika" Margin="250,70,250,264" Background="#ffd60a" Click="btnPrikazIzvestaja_Click"/>
+    </Grid>
+</Window>
