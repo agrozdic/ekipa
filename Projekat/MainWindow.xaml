@@ -3,9 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="AddressWindow" Height="450" Width="800">
-    <Grid Margin="25 25 25 25">
-        <DataGrid Name="dg"/>
+       Title="MainWindow" Height="450" Width="800"
+        Left="360" Top="150">
+    <Grid Margin="0,0,0,-6">
+        <Image Source="/Images/pozadina.jpg" Stretch="Fill"/>
 
+        <Label Content="Dobrodosli u Online Fitnes" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Foreground="#ffd60a" Height="32" Width="250" FontSize="20"/>
+        <Label Content="Log-In:" HorizontalAlignment="Left" Margin="182,139,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.602" Foreground="#ffd60a" FontSize="17"/>
+        <Label Content="Registracija:" HorizontalAlignment="Left" Margin="551,139,0,0" VerticalAlignment="Top" Width="122" Foreground="#ffd60a" FontSize="17"/>
+
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="125,201,0,0" VerticalAlignment="Top" Width="171" Height="67" Background="#ffd60a" Click="btnLogin_Click"/>
+        <Button Content="Registracija" HorizontalAlignment="Left" Margin="520,201,0,0" VerticalAlignment="Top" Width="172" Height="67" Background="#ffd60a" Click="btnRegistracija_Click"/>
     </Grid>
 </Window>

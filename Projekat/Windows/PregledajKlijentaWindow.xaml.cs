@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +14,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for PregledajKlijentaWindow.xaml
     /// </summary>
     public partial class PregledajKlijentaWindow : Window
     {
-        Korisnik Korisnik;
-        public PregledajKlijentaWindow(Korisnik klijent, Korisnik korisnik)
+        RegistrovaniKorisnik registrovaniKorisnik;
+        public PregledajKlijentaWindow(RegistrovaniKorisnik klijent, RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
 
             this.DataContext = klijent;
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
 
             cmbTipKorisnika.ItemsSource = Enum.GetValues(typeof(ETipKorisnika)).Cast<ETipKorisnika>();
 

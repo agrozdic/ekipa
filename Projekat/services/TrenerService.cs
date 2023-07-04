@@ -11,7 +11,7 @@ namespace Projekat.services
 {
     class TrenerService : ITrenerService
     {
-        public List<Korisnik> FindallClients(string email)
+        public List<RegistrovaniKorisnik> FindallClients(string email)
         {
             throw new NotImplementedException();
         }
@@ -38,12 +38,12 @@ namespace Projekat.services
                 while ((line = file.ReadLine()) != null)
                 {
                     string[] trenerIzFajla = line.Split(';');
-                    Korisnik Korisnik = Main.Instance.Korisnici.ToList().Find(korisnik => korisnik.Email.Equals(trenerIzFajla[2]));
+                    RegistrovaniKorisnik registrovaniKorisnik = Main.Instance.Korisnici.ToList().Find(korisnik => korisnik.Email.Equals(trenerIzFajla[2]));
 
                     Trener trener = new Trener
                     {
 
-                        Korisnik = Korisnik,
+                        Korisnik = registrovaniKorisnik,
 
                     };
 

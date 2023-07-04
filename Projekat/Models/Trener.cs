@@ -9,9 +9,9 @@ namespace Projekat.Models
     [Serializable]
     public class Trener
     {
-        private Korisnik korisnik;
+        private RegistrovaniKorisnik korisnik;
 
-        public Korisnik Korisnik
+        public RegistrovaniKorisnik Korisnik
         {
             get { return korisnik; }
             set { korisnik = value; }

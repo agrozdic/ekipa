@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +13,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for TrenerWindow.xaml
     /// </summary>
     public partial class TrenerWindow : Window
     {
-        private Korisnik Korisnik;
-        public TrenerWindow(Korisnik korisnik)
+        private RegistrovaniKorisnik registrovaniKorisnik;
+        public TrenerWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
         }
 
         private void btnMojiTreninzi_Click(object sender, RoutedEventArgs e)
         {
-            ZakazivanjeTerminaWindow treninziWindow = new ZakazivanjeTerminaWindow(Korisnik);
+            ZakazivanjeTerminaWindow treninziWindow = new ZakazivanjeTerminaWindow(registrovaniKorisnik);
             this.Hide();
             treninziWindow.Show();
             treninziWindow.btnZakaziTermin.Visibility = Visibility.Collapsed;

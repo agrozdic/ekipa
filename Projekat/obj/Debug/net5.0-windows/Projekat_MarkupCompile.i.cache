@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\acer\Desktop\Projekat\ekipa\Projekat\App.xaml
-11407045341
+16-1177674362
 
-41110516580
+43-2100371410
 1942035698853
-MainWindow.xaml;
+MainWindow.xaml;Windows\AdminWindow.xaml;Windows\DodajIzmeniKlijentaWindow.xaml;Windows\DodajIzmeniTreneraWindow.xaml;Windows\DodajIzmeniTreningWindow.xaml;Windows\IzmenaKorisnikaWindow.xaml;Windows\KlijentWindow.xaml;Windows\LoginWindow.xaml;Windows\MojiTerminiWindow.xaml;Windows\PregledajKlijentaWindow.xaml;Windows\PrikazIzvestajaWindow.xaml;Windows\PrikazTreneraWindow.xaml;Windows\PrikazUlogovanogKorisnikaWindow.xaml;Windows\TrenerWindow.xaml;Windows\VlasnikWindow.xaml;Windows\ZakazivanjeTerminaWindow.xaml;
 
-False
+True
 

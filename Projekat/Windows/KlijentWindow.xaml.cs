@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for KlijentWindow.xaml
@@ -22,12 +22,12 @@ namespace ProjekatGNS.Windows
     public partial class KlijentWindow : Window
     {
         ICollectionView view;
-        Korisnik Korisnik;
+        RegistrovaniKorisnik registrovaniKorisnik;
 
-        public KlijentWindow(Korisnik korisnik)
+        public KlijentWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
         }
 
         private void btnPrikazTrenera_Click(object sender, RoutedEventArgs e)
@@ -43,7 +43,7 @@ namespace ProjekatGNS.Windows
         private void btnSlobodniTermini_Click(object sender, RoutedEventArgs e)
         {
 
-            ZakazivanjeTerminaWindow treninziWindow = new ZakazivanjeTerminaWindow(Korisnik);
+            ZakazivanjeTerminaWindow treninziWindow = new ZakazivanjeTerminaWindow(registrovaniKorisnik);
             treninziWindow.btnDodajNoviTermin.Visibility = Visibility.Collapsed;
             treninziWindow.btnObrisiTermin.Visibility = Visibility.Collapsed;
             this.Hide();
@@ -53,7 +53,7 @@ namespace ProjekatGNS.Windows
 
         private void btnMojiTermini_Click(object sender, RoutedEventArgs e)
         {
-            MojiTerminiWindow mojiTerminiWindow = new MojiTerminiWindow(Korisnik);
+            MojiTerminiWindow mojiTerminiWindow = new MojiTerminiWindow(registrovaniKorisnik);
             this.Hide();
             mojiTerminiWindow.Show();
 

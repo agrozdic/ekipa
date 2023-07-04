@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for PrikazTreneraWindow.xaml
@@ -32,7 +32,7 @@ namespace ProjekatGNS.Windows
 
         private bool CustomFilter(object obj)
         {
-            Korisnik korisnik = obj as Korisnik;
+            RegistrovaniKorisnik korisnik = obj as RegistrovaniKorisnik;
 
             if (korisnik.Aktivan)
             {
@@ -51,7 +51,7 @@ namespace ProjekatGNS.Windows
         private void UpdateView()
         {
             DGTreneri.ItemsSource = null;
-            view = CollectionViewSource.GetDefaultView(Util.Instance.Korisnici);
+            view = CollectionViewSource.GetDefaultView(Main.Instance.Korisnici);
             DGTreneri.ItemsSource = view;
             DGTreneri.IsSynchronizedWithCurrentItem = true;
 

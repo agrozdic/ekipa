@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for DodajIzmeniTreneraWindow.xaml
@@ -26,22 +26,22 @@ namespace ProjekatGNS.Windows
         public DodajIzmeniTreneraWindow()
         {
             InitializeComponent();
-            view = CollectionViewSource.GetDefaultView(Util.Instance.Korisnici);
+            view = CollectionViewSource.GetDefaultView(Main.Instance.Korisnici);
             view.Filter = CustomFilter;
             dgTreneri.ItemsSource = view;
         }
 
-        private Korisnik Korisnici;
+        private RegistrovaniKorisnik registrovaniKorisnici;
 
-        public DodajIzmeniTreneraWindow(Korisnik korisnik)
+        public DodajIzmeniTreneraWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
-            Korisnici = korisnik;
+            registrovaniKorisnici = korisnik;
         }
 
         private bool CustomFilter(object obj)
         {
-            Korisnik korisnik = obj as Korisnik;
+            RegistrovaniKorisnik korisnik = obj as RegistrovaniKorisnik;
 
             if (korisnik.Aktivan)
             {
@@ -58,7 +58,7 @@ namespace ProjekatGNS.Windows
         }
         private void miDodajKorisnika_Click(object sender, RoutedEventArgs e)
         {
-            Korisnik k = new Korisnik();
+            RegistrovaniKorisnik k = new RegistrovaniKorisnik();
             IzmenaKorisnikaWindow dodajIzmeniWindow = new IzmenaKorisnikaWindow(EStatus.DODAJ, k);
 
             dodajIzmeniWindow.ShowDialog();
@@ -67,8 +67,8 @@ namespace ProjekatGNS.Windows
 
         private void miIzmeniKorisnika_Click(object sender, RoutedEventArgs e)
         {
-            Korisnik k = (Korisnik)dgTreneri.SelectedItem;
-            Korisnik kopija = new Korisnik();
+            RegistrovaniKorisnik k = (RegistrovaniKorisnik)dgTreneri.SelectedItem;
+            RegistrovaniKorisnik kopija = new RegistrovaniKorisnik();
             kopija.Ime = k.Ime;
             kopija.Prezime = k.Prezime;
             kopija.Email = k.Email;
@@ -77,7 +77,7 @@ namespace ProjekatGNS.Windows
             kopija.OsnovniJezik = k.OsnovniJezik;
             kopija.DodatniJezik = k.DodatniJezik;
             kopija.TipKorisnika = k.TipKorisnika;
-            kopija.CiljKlijenta = k.CiljKlijenta;
+            kopija.Cilj = k.Cilj;
             kopija.Lozinka = k.Lozinka;
             kopija.Aktivan = k.Aktivan;
 
@@ -86,16 +86,16 @@ namespace ProjekatGNS.Windows
 
             if ((bool)!dodajIzmeniTreneraWindow.ShowDialog())
             {
-                int index = Util.Instance.Korisnici.ToList().FindIndex(ko => ko.Email.Equals(k.Email));
-                Util.Instance.Korisnici[index] = kopija;
+                int index = Main.Instance.Korisnici.ToList().FindIndex(ko => ko.Email.Equals(k.Email));
+                Main.Instance.Korisnici[index] = kopija;
             }
             view.Refresh();
         }
 
         private void miObrisi_Click(object sender, RoutedEventArgs e)
         {
-            Korisnik k = (Korisnik)dgTreneri.SelectedItem;
-            Util.Instance.DeleteUser(k.Email);
+            RegistrovaniKorisnik k = (RegistrovaniKorisnik)dgTreneri.SelectedItem;
+            Main.Instance.DeleteUser(k.Email);
             view.Refresh();
         }
 

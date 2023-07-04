@@ -1,9 +1,9 @@
-﻿<Window x:Class="ProjekatGNS.Windows.KlijentWindow"
+﻿<Window x:Class="Projekat.Windows.KlijentWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjekatGNS.Windows"
+        xmlns:local="clr-namespace:Projekat.Windows"
         mc:Ignorable="d"
         Title="KlijentWindow" Height="450" Width="800"
         Left="360" Top="150">

@@ -11,7 +11,7 @@ namespace Projekat.services
     {
         void SaveUsers(string filename);
         void ReadUsers(string filename);
-        List<Korisnik> FindallClients(String email);
+        List<RegistrovaniKorisnik> FindallClients(String email);
         Trener NadjiTreneraPrekoEmaila(string email);
     }
 }

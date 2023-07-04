@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for MojiTerminiWindow.xaml
@@ -23,12 +23,12 @@ namespace ProjekatGNS.Windows
     {
         ICollectionView view;
         private EStatusTreninga odabraniStatusTreninga;
-        private Korisnik Korisnik;
-        public MojiTerminiWindow(Korisnik korisnik)
+        private RegistrovaniKorisnik registrovaniKorisnik;
+        public MojiTerminiWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
             UpdateView();
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
             view.Filter = CustomFilter;
         }
 
@@ -37,18 +37,18 @@ namespace ProjekatGNS.Windows
             Trening trening = obj as Trening;
             if (trening.Aktivan)
             {
-                if (odabraniStatusTreninga.Equals(EStatusTreninga.SLOBODAN) && Korisnik.TipKorisnika.Equals(ETipKorisnika.KLIJENT))
+                if (odabraniStatusTreninga.Equals(EStatusTreninga.SLOBODAN) && registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.KLIJENT))
                 {
                     return trening.StatusTreninga.Equals(EStatusTreninga.REZERVISAN);
 
                 }
-                else if (Korisnik.TipKorisnika.Equals(ETipKorisnika.ADMINISTRATOR))
+                else if (registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.ADMINISTRATOR))
                 {
                     return true;
                 }
-                else if (Korisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
+                else if (registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
                 {
-                    return trening.Trener.Korisnik.Email.Equals(Korisnik.Email);
+                    return trening.Trener.Korisnik.Email.Equals(registrovaniKorisnik.Email);
                 }
             }
             return false;

@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for PrikazIzvestajaWindow.xaml
@@ -26,12 +26,12 @@ namespace ProjekatGNS.Windows
         public PrikazIzvestajaWindow()
         {
             InitializeComponent();
-            view = CollectionViewSource.GetDefaultView(Util.Instance.Korisnici);
+            view = CollectionViewSource.GetDefaultView(Main.Instance.Korisnici);
             dgTreneri.ItemsSource = view;
         }
-        private Korisnik registrovaniKorisnici;
+        private RegistrovaniKorisnik registrovaniKorisnici;
 
-        public PrikazIzvestajaWindow(Korisnik korisnik)
+        public PrikazIzvestajaWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
             registrovaniKorisnici = korisnik;

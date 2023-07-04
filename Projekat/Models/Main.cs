@@ -16,7 +16,7 @@ namespace Projekat.Models
         private IKlijentService klijentService;
         private ITreningService treningService;
 
-        public ObservableCollection<Korisnik> Korisnici { get; set; }
+        public ObservableCollection<RegistrovaniKorisnik> Korisnici { get; set; }
         public ObservableCollection<Trener> Treneri { get; set; }
         public ObservableCollection<Klijent> Klijenti { get; set; }
         public ObservableCollection<Trening> Treninzi { get; set; }
@@ -42,16 +42,16 @@ namespace Projekat.Models
         public void Initialize()
         {
 
-            Korisnici = new ObservableCollection<Korisnik>();
+            Korisnici = new ObservableCollection<RegistrovaniKorisnik>();
             Treneri = new ObservableCollection<Trener>();
             Klijenti = new ObservableCollection<Klijent>();
             Treninzi = new ObservableCollection<Trening>();
 
         }
 
-        public Korisnik Login(string email, string lozinka)
+        public RegistrovaniKorisnik Login(string email, string lozinka)
         {
-            foreach (Korisnik korisnik in Korisnici)
+            foreach (RegistrovaniKorisnik korisnik in Korisnici)
             {
                 if (korisnik.Email.Equals(email) && korisnik.Lozinka.Equals(lozinka))
                 {

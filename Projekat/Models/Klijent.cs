@@ -24,7 +24,7 @@ namespace Projekat.Models
 
         public string KlijentZaUpisUFajl()
         {
-            return korisnik.Ime + ";" + korisnik.Prezime + ";" + korisnik.Email + ";" + korisnik.Telefon + ";" + korisnik.Adresa + ";" + korisnik.BrKartice + ";" + korisnik.OsnovniJezik + ";" + korisnik.DodatniJezik + ";" + korisnik.TipKorisnika + ";" + korisnik.Lozinka + ";" + korisnik.CiljKlijenta + ";" + korisnik.Aktivan;
+            return korisnik.Ime + ";" + korisnik.Prezime + ";" + korisnik.Email + ";" + korisnik.Telefon + ";" + korisnik.Adresa + ";" + korisnik.BrKartice + ";" + korisnik.OsnovniJezik + ";" + korisnik.DodatniJezik + ";" + korisnik.TipKorisnika + ";" + korisnik.Lozinka + ";" + korisnik.Cilj + ";" + korisnik.Aktivan;
         }
         
     }

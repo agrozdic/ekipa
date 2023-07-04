@@ -1,5 +1,5 @@
-﻿using ProjekatGNS.Model;
-using ProjekatGNS.Services;
+﻿using Projekat.Models;
+using Projekat.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for DodajIzmeniTreningWindow.xaml
@@ -23,8 +23,8 @@ namespace ProjekatGNS.Windows
     {
         private EStatus odabraniStatus;
         private Trening odabraniTrening;
-        Korisnik Korisnik;
-        public DodajIzmeniTreningWindow(EStatus status, Trening trening, Korisnik korisnik)
+        RegistrovaniKorisnik registrovaniKorisnik;
+        public DodajIzmeniTreningWindow(EStatus status, Trening trening, RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
             ComboStatusTreninga.ItemsSource = Enum.GetValues(typeof(EStatusTreninga)).Cast<EStatusTreninga>();
@@ -32,7 +32,7 @@ namespace ProjekatGNS.Windows
             odabraniStatus = status;
             odabraniTrening = trening;
             this.DataContext = trening;
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
 
             foreach (Trener trener in Main.Instance.Treneri)
             {
@@ -69,7 +69,7 @@ namespace ProjekatGNS.Windows
             if (odabraniStatus.Equals(EStatus.DODAJ))
 
             {
-                IKlijentService klijentService = new IKlijentService();
+                KlijentService klijentService = new KlijentService();
                 odabraniTrening = new Trening();
                 odabraniTrening.Aktivan = true;
                 //odabraniTrening.Klijent = klijentService.NadjiKlijentaPrekoEmaila("xxxxx");

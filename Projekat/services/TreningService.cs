@@ -1,5 +1,5 @@
-﻿using ProjekatGNS.Izuzeci;
-using ProjekatGNS.Model;
+﻿using Projekat.Izuzeci;
+using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;

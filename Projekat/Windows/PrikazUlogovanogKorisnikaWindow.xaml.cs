@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for PrikazUlogovanogKorisnikaWindow.xaml
     /// </summary>
     public partial class PrikazUlogovanogKorisnikaWindow : Window
     {
-        Korisnik prijavljen;
+        RegistrovaniKorisnik prijavljen;
 
 
-        public PrikazUlogovanogKorisnikaWindow(Korisnik korisnik)
+        public PrikazUlogovanogKorisnikaWindow(RegistrovaniKorisnik korisnik)
         {
             prijavljen = korisnik;
 

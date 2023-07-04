@@ -15,13 +15,13 @@ namespace Projekat.services
         public void DeleteUser(string email)
         {
 
-            Korisnik Korisnik = Main.Instance.Korisnici.ToList().Find(korisnik => korisnik.Email.Equals(email));
-            if (korisnik == null)
+            RegistrovaniKorisnik registrovaniKorisnik = Main.Instance.Korisnici.ToList().Find(korisnik => korisnik.Email.Equals(email));
+            if (registrovaniKorisnik == null)
             {
                 throw new UserNotFoundException($"Ne postoji korisnik sa emailom: {email}");
             }
 
-            korisnik.Aktivan = false;
+            registrovaniKorisnik.Aktivan = false;
             Console.WriteLine("Uspesno obrisan korisnik sa emailom:" + email);
 
 
@@ -30,7 +30,7 @@ namespace Projekat.services
 
         public void ReadUsers(string filename)
         {
-            Main.Instance.Korisnici = new ObservableCollection<Korisnik>();
+            Main.Instance.Korisnici = new ObservableCollection<RegistrovaniKorisnik>();
 
             using (StreamReader file = new StreamReader(@"../../Resources/" + filename))
             {
@@ -43,7 +43,7 @@ namespace Projekat.services
                     Enum.TryParse(korisnikIzFajla[8], out ETipKorisnika tip);
                     Enum.TryParse(korisnikIzFajla[10], out ECilj cilj);
                     Boolean.TryParse(korisnikIzFajla[11], out Boolean status);
-                    Korisnik korisnik = new Korisnik
+                    RegistrovaniKorisnik registrovaniKorisnik = new RegistrovaniKorisnik
                     {
 
                         Ime = korisnikIzFajla[0],
@@ -60,7 +60,7 @@ namespace Projekat.services
                         Aktivan = status
                     };
 
-                    Main.Instance.Korisnici.Add(korisnik);
+                    Main.Instance.Korisnici.Add(registrovaniKorisnik);
                 }
             }
         }
@@ -69,9 +69,9 @@ namespace Projekat.services
         {
             using (StreamWriter file = new StreamWriter(@"../../Resources/" + filename))
             {
-                foreach (Korisnik korisnik in Main.Instance.Korisnici)
+                foreach (RegistrovaniKorisnik registrovaniKorisnik in Main.Instance.Korisnici)
                 {
-                    file.WriteLine(korisnik.KorisnikZaUpisUFajl());
+                    file.WriteLine(registrovaniKorisnik.KorisnikZaUpisUFajl());
                 }
             }
         }

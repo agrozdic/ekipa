@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for ZakazivanjeTerminaWindow.xaml
@@ -23,16 +23,16 @@ namespace ProjekatGNS.Windows
     {
         ICollectionView view;
         private EStatusTreninga odabraniStatusTreninga;
-        private Korisnik Korisnik;
+        private RegistrovaniKorisnik registrovaniKorisnik;
 
-        public ZakazivanjeTerminaWindow(Korisnik korisnik)
+        public ZakazivanjeTerminaWindow(RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
             UpdateView();
-            Korisnik = korisnik;
+            registrovaniKorisnik = korisnik;
             view.Filter = CustomFilter;
 
-            if (!Korisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
+            if (!registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
             {
                 btnPregledPolaznika.Visibility = Visibility.Collapsed;
             }
@@ -46,16 +46,16 @@ namespace ProjekatGNS.Windows
             if (trening.Aktivan)
             {
 
-                if (odabraniStatusTreninga.Equals(EStatusTreninga.SLOBODAN) && Korisnik.TipKorisnika.Equals(ETipKorisnika.KLIJENT))
+                if (odabraniStatusTreninga.Equals(EStatusTreninga.SLOBODAN) && registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.KLIJENT))
                 {
                     return trening.StatusTreninga.Equals(EStatusTreninga.SLOBODAN);
 
                 }
-                else if (Korisnik.TipKorisnika.Equals(ETipKorisnika.ADMINISTRATOR))
+                else if (registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.ADMINISTRATOR))
                 {
                     return true;
                 }
-                else if (Korisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
+                else if (registrovaniKorisnik.TipKorisnika.Equals(ETipKorisnika.TRENER))
                 {
                     //return trening.Trener.Korisnik.Email.Equals(Korisnik.Email);
                     return true;
@@ -88,7 +88,7 @@ namespace ProjekatGNS.Windows
         {
 
             Trening trening = new Trening();
-            DodajIzmeniTreningWindow dodajIzmeniTrening = new DodajIzmeniTreningWindow(EStatus.DODAJ, trening, Korisnik);
+            DodajIzmeniTreningWindow dodajIzmeniTrening = new DodajIzmeniTreningWindow(EStatus.DODAJ, trening, registrovaniKorisnik);
             this.Hide();
             if (!(bool)dodajIzmeniTrening.ShowDialog()) { }
             this.Show();
@@ -114,7 +114,7 @@ namespace ProjekatGNS.Windows
         {
             Trening treningZaZakazivanje = view.CurrentItem as Trening;
             treningZaZakazivanje.StatusTreninga = EStatusTreninga.REZERVISAN;
-            treningZaZakazivanje.Klijent = Main.Instance.Klijenti.ToList().Find(k => k.Korisnik.Email.Equals(Korisnik.Email));
+            treningZaZakazivanje.Klijent = Main.Instance.Klijenti.ToList().Find(k => k.Korisnik.Email.Equals(registrovaniKorisnik.Email));
             MessageBox.Show("Uspesno ste zakazali termin");
 
             UpdateView();
@@ -128,7 +128,7 @@ namespace ProjekatGNS.Windows
             Trening trening = view.CurrentItem as Trening;
             if (trening.StatusTreninga.Equals(EStatusTreninga.REZERVISAN))
             {
-                PregledajKlijentaWindow reviewKlijent = new PregledajKlijentaWindow(trening.Klijent.Korisnik, Korisnik);
+                PregledajKlijentaWindow reviewKlijent = new PregledajKlijentaWindow(trening.Klijent.Korisnik, registrovaniKorisnik);
                 this.Hide();
                 reviewKlijent.Show();
             }

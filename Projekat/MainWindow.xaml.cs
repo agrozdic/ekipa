@@ -1,6 +1,7 @@
 ﻿using Projekat.Models;
-using Projekat.resources;
-using Projekat.resources.services;
+//using Projekat.Resources;
+//using Projekat.Resources.services;
+using Projekat.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,16 +26,31 @@ namespace Projekat
     /// </summary>
     public partial class MainWindow : Window
     {
+        private EStatus status;
         public MainWindow()
         {
             InitializeComponent();
-            TerminService terminService = new TerminService();
-            terminService.InitializeService();
-            ObservableCollection<Termin> listaCiljeva = terminService.getTermini();
 
-            dg.ItemsSource = listaCiljeva;
+            Main.Instance.CitanjeEntiteta("korisnici.txt");
+            Main.Instance.CitanjeEntiteta("treneri.txt");
+        }
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            this.Hide();
+            loginWindow.Show();
+        }
+        private void btnRegistracija_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrovaniKorisnik registrovaniKorisnici = new RegistrovaniKorisnik();
+            DodajIzmeniKlijentaWindow dodajIzmeniKlijenta = new DodajIzmeniKlijentaWindow(status, registrovaniKorisnici);
+            dodajIzmeniKlijenta.cmbTipKorisnika.IsEnabled = true;
 
-          
+            if (!(bool)dodajIzmeniKlijenta.ShowDialog())
+            {
+
+            }
+            this.Show();
         }
     }
 }

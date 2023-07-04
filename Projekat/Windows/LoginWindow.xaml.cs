@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
@@ -50,7 +50,7 @@ namespace ProjekatGNS.Windows
             }
             else
             {
-                Korisnik korisnik = Main.Instance.Login(email, lozinka);
+                RegistrovaniKorisnik korisnik = Main.Instance.Login(email, lozinka);
                 if (korisnik == null)
                 {
                     MessageBox.Show("Neispravan email ili lozinka.");
@@ -71,7 +71,7 @@ namespace ProjekatGNS.Windows
         }
         private void btnRegistracija_Click(object sender, RoutedEventArgs e)
         {
-            Korisnik registrovaniKorisnici = new Korisnik();
+            RegistrovaniKorisnik registrovaniKorisnici = new RegistrovaniKorisnik();
             DodajIzmeniKlijentaWindow dodajIzmeniKlijenta = new DodajIzmeniKlijentaWindow(status, registrovaniKorisnici);
             dodajIzmeniKlijenta.cmbTipKorisnika.IsEnabled = true;
 

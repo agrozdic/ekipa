@@ -1,4 +1,4 @@
-﻿using ProjekatGNS.Model;
+﻿using Projekat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProjekatGNS.Windows
+namespace Projekat.Windows
 {
     /// <summary>
     /// Interaction logic for DodajIzmeniKlijentaWindow.xaml
@@ -23,9 +23,9 @@ namespace ProjekatGNS.Windows
     public partial class DodajIzmeniKlijentaWindow : Window
 
     {
-        private Korisnik odabraniKorisnik;
+        private RegistrovaniKorisnik odabraniKorisnik;
         private EStatus odabraniStatus;
-        public DodajIzmeniKlijentaWindow(EStatus status,Korisnik korisnik)
+        public DodajIzmeniKlijentaWindow(EStatus status,RegistrovaniKorisnik korisnik)
         {
             InitializeComponent();
             odabraniKorisnik = korisnik;
@@ -33,7 +33,7 @@ namespace ProjekatGNS.Windows
 
             this.DataContext = korisnik;
 
-            cmbCiljKlijenta.ItemsSource = Enum.GetValues(typeof(ECiljKlijenta));
+            cmbCiljKlijenta.ItemsSource = Enum.GetValues(typeof(ECilj));
             //cmbTipKorisnika.ItemsSource = Enum.GetValues(typeof(ETipKorisnika));
             foreach (ETipKorisnika temp in Enum.GetValues(typeof(ETipKorisnika)))
             {
